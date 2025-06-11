@@ -50,8 +50,8 @@ function clickDownload() {
 
 function download() {
     const resumeRef = document.createElement('a');
-    resumeRef.href = "Addison Doseck Resume.pdf";
-    resumeRef.download = "Addison Doseck Resume.pdf";
+    resumeRef.href = "Addison_Doseck_Resume_FS2.pdf";
+    resumeRef.download = "Addison_Doseck_Resume_FS2.pdf";
     document.body.appendChild(resumeRef);
     if(downloadClicked) {
         resumeRef.click();
