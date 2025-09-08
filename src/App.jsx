@@ -299,18 +299,20 @@ function Navbar() {
     { to: "/experience", label: "Experience", icon: Briefcase },
     { to: "/skills", label: "Skills", icon: Sparkles },
     { to: "/certifications", label: "Certifications", icon: Award },
-    { to: "/education", label: "Education", icon: GraduationCap }, // NEW
+    { to: "/education", label: "Education", icon: GraduationCap },
     { to: "/about", label: "About", icon: User },
     { to: "/contact", label: "Contact", icon: Mail },
   ];
 
   return (
     <nav className="fixed top-0 inset-x-0 z-40 backdrop-blur bg-black/70 border-b border-white/10">
-      <div className="max-w-6xl mx-auto flex justify-between items-center h-16 px-4">
+      <div className="max-w-6xl mx-auto h-16 px-4 flex items-center justify-between">
         <NavLink to="/" className="font-bold text-lg text-white">
           Addison Doseck
         </NavLink>
-        <ul className="flex gap-6 text-sm">
+
+        {/* Desktop nav (unchanged) */}
+        <ul className="hidden md:flex gap-6 text-sm">
           {links.map(({ to, label, icon: Icon }) => (
             <li key={to}>
               <NavLink
@@ -336,10 +338,48 @@ function Navbar() {
             </a>
           </li>
         </ul>
+
+        {/* Mobile nav (only visible < md) */}
+        <div className="md:hidden relative w-full ml-4">
+          <ul
+            className="flex items-center gap-4 text-sm overflow-x-auto whitespace-nowrap hide-scrollbar pr-8"
+            style={{ WebkitOverflowScrolling: "touch" }}
+            aria-label="Site sections"
+          >
+            {links.map(({ to, label, icon: Icon }) => (
+              <li key={to} className="shrink-0">
+                <NavLink
+                  to={to}
+                  className={({ isActive }) =>
+                    `inline-flex items-center gap-1 px-2 py-1.5 rounded-md ${
+                      isActive ? "text-sky-400 bg-white/5" : "text-neutral-300 hover:text-sky-400"
+                    }`
+                  }
+                >
+                  <Icon size={16} /> {label}
+                </NavLink>
+              </li>
+            ))}
+            <li className="shrink-0">
+              <a
+                href="/resume.pdf"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-1 px-2 py-1.5 rounded-md text-neutral-300 hover:text-sky-400"
+              >
+                <FileText size={16} /> Resume
+              </a>
+            </li>
+          </ul>
+
+          {/* subtle edge fade to hint “scroll” */}
+          <div className="pointer-events-none absolute inset-y-0 right-0 w-8 bg-gradient-to-l from-black/80 to-transparent" />
+        </div>
       </div>
     </nav>
   );
 }
+
 
 // -----------------------------
 // PAGES

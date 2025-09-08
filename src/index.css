@@ -1,9 +1,6 @@
-/* @tailwind base;
-@tailwind components;
-@tailwind utilities; */
 @import "tailwindcss";
 
-
-
-/* body { outline: 6px solid hotpink !important; } */
+/* Hide horizontal scrollbar but keep scrolling */
+.hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+.hide-scrollbar::-webkit-scrollbar { display: none; }
 
