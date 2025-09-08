@@ -329,7 +329,7 @@ function Navbar() {
           ))}
           <li>
             <a
-              href="/resume.pdf"
+              href="/resume_v2.pdf"
               target="_blank"
               rel="noreferrer"
               className="inline-flex items-center gap-1 text-neutral-300 hover:text-sky-400"
@@ -362,7 +362,7 @@ function Navbar() {
             ))}
             <li className="shrink-0">
               <a
-                href="/resume.pdf"
+                href="/resume_v2.pdf"
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center gap-1 px-2 py-1.5 rounded-md text-neutral-300 hover:text-sky-400"
@@ -421,7 +421,7 @@ function Home() {
             View Projects
           </NavLink>
           <a
-            href="/resume.pdf"
+            href="/resume_v2.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="px-4 py-2 rounded-full border border-sky-600 text-sky-400 hover:bg-sky-600/10 transition"
