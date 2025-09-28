@@ -139,6 +139,13 @@ const CERTIFICATIONS = [
     href: "https://www.linkedin.com/learning/certificates/bcc6d7ed418d8943a2e5d2b1d2b5e6a1177d9b8e175754b019280d7d05810cdb",
   },
   {
+    name: "Google Cybersecurity Specialization Certification",
+    issuer: "Google",
+    year: "2025",
+    img: "/certs/GoogleCybersecurityCert.png",
+    href: "https://coursera.org/share/07959669587320e1b5627dbd50d92536",
+  },
+  {
     name: "Google Analytics Certification (GA4)",
     issuer: "Google Digital Academy (Skillshop)",
     year: "2025",
