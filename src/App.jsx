@@ -15,50 +15,99 @@ import {
   GraduationCap,
   Github
 } from "lucide-react";
+import FloatingLines from "./components/FloatingLines";
 
 // -----------------------------
 // DATA
 // -----------------------------
 const PROJECTS = [
   {
+    title: "Consultrix",
+    blurb:
+      "Consultrix is a full-stack workforce and training management platform that centralizes operations across facilities, cohorts, instructors, and students, with features for assignments, attendance, grading, and progress tracking. It is built using Java 25, Spring Boot, Spring Data JPA (Hibernate), MySQL, and React, and deployed on AWS with Jenkins CI/CD and Terraform-managed infrastructure. The project was developed using a structured Git workflow with 40+ feature branches for modular, scalable development.",
+    img: "/projects/Consultrix.png",
+    projectUrl: "https://consultrix-client.vercel.app/",
+    githubUrl: "",
+  },
+  {
+    title: "NomadTrack App",
+    blurb:
+      "NomadTrack is a travel and social platform built for digital nomads to log trips, track wishlist destinations, share photos, and connect with other users through a community-style dashboard. The app’s frontend is built with React 19 and Vite, uses React Router for navigation, and integrates with AWS services including Lex and Bedrock-powered assistant features, along with a custom REST API for trips, users, and wishlists. It is deployed through a Jenkins CI/CD pipeline to an AWS S3 bucket and served through CloudFront, while the backend API is hosted at https://nomadtrack.net",
+    img: "/projects/NomadTrack.png",
+    projectUrl: "https://nomadtrack.net",
+    githubUrl: "",
+  },
+  {
+    title: "API Debugger Tool",
+    blurb:
+      "Replayly is a web app for tracking backend API failures, reviewing request logs, adding notes, and replaying saved requests for debugging. Tech stack: React, Vite, custom UI components, and a connected Spring backend API.",
+    img: "/projects/Replayly.png",
+    projectUrl: "",
+    githubUrl: "https://github.com/DoughSec/Replayly-server",
+  },
+  {
     title: "Liars Bar Game",
     blurb:
       "Debugged and resolved errors across 100+ sessions, enhancing application stability and user experience. Built a command-line interface enabling real-time interaction and tracked 1,000+ gameplay sessions. Leveraged Git for version control across 25+ feature branches while developing in IntelliJ and VS Code.",
     img: "/projects/Liar.png",
+    projectUrl: "",
+    githubUrl: "",
   },
   {
     title: "File-Metadata Microservice",
     blurb:
       "Generated a file metadata microservice using Node.js and Express to process uploaded files and return structured information such as file name, type, and size. Implemented file handling with Multer middleware to ensure secure and efficient uploads. Deployed on Replit, highlighting backend microservice development and API integration skills.",
     img: "/projects/meta.png",
+    projectUrl: "",
+    githubUrl: "https://github.com/DoughSec/File-Metadata-Microservice",
   },
   {
     title: "Exercise-Tracker",
     blurb:
       "Created an exercise tracker API with Node.js, Express, and MongoDB to log workouts for multiple users. Designed endpoints to add exercises, track duration and dates, and retrieve logs with filtering options for flexibility. Deployed on Replit, showcasing backend database integration, RESTful API design, and full-stack problem-solving skills.",
     img: "/projects/Exercise.png",
+    projectUrl: "",
+    githubUrl: "https://github.com/DoughSec/Exercise-Tracker",
   },
   {
     title: "URL-Shortener API",
     blurb:
       "Engineered a URL shortener microservice with Node.js, Express, and MongoDB to generate and manage compact links. Designed endpoints for URL validation, storage, and redirection, ensuring secure and efficient handling of user input. Deployed on Replit, demonstrating backend database integration and scalable REST API development.",
     img: "/projects/URL.png",
+    projectUrl: "",
+    githubUrl: "https://github.com/DoughSec/URL-Shortener",
   },
   {
     title: "HeadParser Microservice",
     blurb:
       "Built a request header parser microservice using Node.js and Express to extract client IP address, preferred language, and software information from HTTP headers. Designed lightweight RESTful endpoints for fast, reliable responses and validated outputs for accuracy. Deployed the project to Replit, demonstrating backend development and API integration skills.",
     img: "/projects/Code.png",
+    projectUrl: "",
+    githubUrl: "https://github.com/DoughSec/headparser",
   },
   {
     title: "Timestamp API",
     blurb:
       "Developed a backend timestamp microservice with Node.js and Express to generate and validate Unix and UTC date formats via API endpoints. Implemented robust error handling to manage invalid date requests and ensure reliable responses. Deployed the project on Replit, showcasing RESTful API design and backend development proficiency.",
     img: "/projects/Time.png",
+    projectUrl: "",
+    githubUrl: "https://github.com/DoughSec/timestamp.github.io",
   },
 ];
 
 const EXPERIENCE = [
+  {
+    role: "Software Engineer Apprenticeship",
+    company: "PeopleShores/Accenture",
+    period: "January 2026 – Present",
+    bullets: [
+      "Completed 450+ hours of intensive Systems Engineering training via Per Scholas, building 5+ full-stack applications using React, Vite, Tailwind CSS, and Spring Boot",
+      "Developed and integrated 15+ RESTful API endpoints using Spring Boot, Hibernate, and JPA, enabling seamless data exchange between frontend and backend systems",
+      "Optimized 10+ database tables in MySQL, improving query performance by 25%+ and ensuring reliable data management",
+      "Implemented Jenkins CI/CD pipelines, automating 100% of build and deployment workflows, reducing deployment time by 40%+",
+      "Deployed 3+ full-stack applications to AWS EC2 and S3, configuring scalable cloud infrastructure supporting high availability"
+    ],
+  },
   {
     role: "Software Engineer Intern",
     company: "Johnson, Hall and Delong Strategies LLC ",
@@ -69,17 +118,6 @@ const EXPERIENCE = [
       "Built and deployed interactive dashboards (Python, JavaScript, AWS Lambda, Pandas) for 20+ stakeholders, providing real-time monitoring of system performance and sales team effectiveness.",
       "Applied ML models (scikit-learn, Pandas) to classify conversation outcomes with 90%+ precision, identifying objection patterns and supporting training for 30+ sales representatives.",
       "Delivered actionable insights that improved sales conversion strategies, cutting failed conversions from price objections by 24% and boosting opening-line effectiveness by 15%.",
-    ],
-  },
-  {
-    role: "Full Stack Developer Intern - Nomad-Track Remote Work Travel Journal",
-    company: "Tech Elevator",
-    period: "Sept 2024 – May 2025",
-    bullets: [
-      "Constructed 15+ RESTful API endpoints and integrated backend microservices.",
-      "Engineered the backend with Spring Boot in an Agile/Scrum environment, structuring over 10 service and controller classes using object-oriented principles (OOP), reducing coupling and improving maintainability by 30%.",
-      "Architected a dynamic frontend with Vue.js, integrating interactive components, responsive design using HTML/CSS, and Google Maps/Mapbox APIs for real-time geolocation features.",
-      "Implemented API testing with Postman and integrated CI-ready code, reducing backend defects by 20%.",
     ],
   },
   {
@@ -110,19 +148,85 @@ const SKILL_BUCKETS = [
   { label: "Frontend", items: ["Vue.js", "React", "Vite", "Tailwind", "Framer Motion"] },
   {
     label: "Backend/Database",
-    items: ["PostgreSQL", "Spring Boot", "MongoDB", "REST API Development", "Microservices", "API Testing", "Integration Testing", "JUnit Testing"],
+    items: ["PostgreSQL", "MySQL", "Spring Boot", "MongoDB", "REST API Development", "Microservices", "API Testing", "Integration Testing", "JUnit Testing"],
   },
   {
     label: "AI/ML",
-    items: ["Pandas", "scikit-learn", "Kafka", "Supervised Learning", "Unsupervised Learning", "Reinforced Learning", "Decision Trees (CART)", "Classification & Regression"],
+    items: ["AWS Bedrock Agents", "Pandas", "scikit-learn", "Kafka", "Supervised Learning", "Unsupervised Learning", "Reinforced Learning", "Decision Trees (CART)", "Classification & Regression"],
   },
   { label: "Data", items: ["Tableau", "BigQuery", "GA4", "Google Analytics", "Data Cleaning", "Data Analysis", "Business Analysis", "Data Visualization"] },
-  { label: "Cloud/DevOps", items: ["AWS", "Azure", "Kubernetes", "Git", "Docker"] },
-  { label: "Collaboration", items: ["Agile/Scrum", "CI/CD", "Software Development Lifecycle (SDLC)"] },
+  {
+    label: "Cloud/DevOps", items: ["AWS", "Azure", "Kubernetes", "Git", "Docker", "EC2", "S3", "Route 53", "Amazon Lex", "VPC"]
+  },
+  { label: "Collaboration", items: ["Agile/Scrum", "Jenkins CI/CD", "Software Development Lifecycle (SDLC)"] },
   { label: "Tools/IDEs", items: ["IntelliJ", "VSCode", "Eclipse", "Postman", "Slack"] },
 ];
 
 const CERTIFICATIONS = [
+  {
+    name: "AI Fluency",
+    issuer: "",
+    year: "2026",
+    img: "/certs/Fluency.png",
+    href:
+      "https://verify.skilljar.com/c/aqbn7n62vm9x",
+  },
+  {
+    name: "Advanced Model Context Protocol",
+    issuer: "Anthropic",
+    year: "2026",
+    img: "/certs/AdvancedMCP.png",
+    href:
+      "https://verify.skilljar.com/c/oq3hp9iztqrp",
+  },
+  {
+    name: "Claude 101",
+    issuer: "Anthropic",
+    year: "2026",
+    img: "/certs/claude101.png",
+    href:
+      "https://verify.skilljar.com/c/bvwnzasvhvrb",
+  },
+  {
+    name: "Claude Code In Action",
+    issuer: "Anthropic",
+    year: "2026",
+    img: "/certs/ClaudeCodeInAction.png",
+    href:
+      "https://verify.skilljar.com/c/zcudna8avt3m",
+  },
+  {
+    name: "Claude Cowork",
+    issuer: "Anthropic",
+    year: "2026",
+    img: "/certs/ClaudeCowork.png",
+    href:
+      "https://verify.skilljar.com/c/srxfempnfst3",
+  },
+  {
+    name: "Intro Agent Skills",
+    issuer: "Anthropic",
+    year: "2026",
+    img: "/certs/IntroAgentSkills.png",
+    href:
+      "https://verify.skilljar.com/c/n9xagokh95mo",
+  },
+  {
+    name: "Intro to subagents",
+    issuer: "Anthropic",
+    year: "2026",
+    img: "/certs/IntroSubAgents.png",
+    href:
+      "https://verify.skilljar.com/c/fnaiotz3sann",
+  },
+  {
+    name: "Model Context Protocol (MCP)",
+    issuer: "Anthropic",
+    year: "2026",
+    img: "/certs/ModelContextProtocol.png",
+    href:
+      "https://verify.skilljar.com/c/eauejbr7byju",
+  },
   {
     name: "J.P. Morgan - Software Engineering Job Simulation",
     issuer: "Forage",
@@ -312,7 +416,7 @@ function Navbar() {
   ];
 
   return (
-    <nav className="fixed top-0 inset-x-0 z-40 backdrop-blur bg-black/70 border-b border-white/10">
+    <nav className="fixed top-0 inset-x-0 z-40 backdrop-blur bg-black/70 border-b border-white/10" >
       <div className="max-w-6xl mx-auto h-16 px-4 flex items-center justify-between">
         <NavLink to="/" className="font-bold text-lg text-white">
           Addison Doseck
@@ -325,8 +429,7 @@ function Navbar() {
               <NavLink
                 to={to}
                 className={({ isActive }) =>
-                  `inline-flex items-center gap-1 ${
-                    isActive ? "text-sky-400" : "text-neutral-300 hover:text-sky-400"
+                  `inline-flex items-center gap-1 ${isActive ? "text-sky-400" : "text-neutral-300 hover:text-sky-400"
                   }`
                 }
               >
@@ -336,7 +439,7 @@ function Navbar() {
           ))}
           <li>
             <a
-              href="/resume_v2e.pdf"
+              href="/addison_doseck_resume_v7.pdf"
               target="_blank"
               rel="noreferrer"
               className="inline-flex items-center gap-1 text-neutral-300 hover:text-sky-400"
@@ -358,8 +461,7 @@ function Navbar() {
                 <NavLink
                   to={to}
                   className={({ isActive }) =>
-                    `inline-flex items-center gap-1 px-2 py-1.5 rounded-md ${
-                      isActive ? "text-sky-400 bg-white/5" : "text-neutral-300 hover:text-sky-400"
+                    `inline-flex items-center gap-1 px-2 py-1.5 rounded-md ${isActive ? "text-sky-400 bg-white/5" : "text-neutral-300 hover:text-sky-400"
                     }`
                   }
                 >
@@ -369,7 +471,7 @@ function Navbar() {
             ))}
             <li className="shrink-0">
               <a
-                href="/resume_v2e.pdf"
+                href="/addison_doseck_resume_v7.pdf"
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center gap-1 px-2 py-1.5 rounded-md text-neutral-300 hover:text-sky-400"
@@ -383,7 +485,7 @@ function Navbar() {
           <div className="pointer-events-none absolute inset-y-0 right-0 w-8 bg-gradient-to-l from-black/80 to-transparent" />
         </div>
       </div>
-    </nav>
+    </nav >
   );
 }
 
@@ -392,16 +494,8 @@ function Navbar() {
 // PAGES
 // -----------------------------
 function Home() {
-  const heroBg = "/landing.jpg";
   return (
     <section className="min-h-[75vh] relative overflow-hidden flex items-center justify-center">
-      {/* Background */}
-      <div
-        className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: `url(${heroBg})` }}
-      />
-      <div className="absolute inset-0 bg-black/60" />
-
       {/* Content */}
       <div className="relative text-center max-w-3xl mx-auto px-6 text-white">
         <motion.h1
@@ -428,7 +522,7 @@ function Home() {
             View Projects
           </NavLink>
           <a
-            href="/resume_v2e.pdf"
+            href="/addison_doseck_resume_v7.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="px-4 py-2 rounded-full border border-sky-600 text-sky-400 hover:bg-sky-600/10 transition"
@@ -443,22 +537,30 @@ function Home() {
 
 function Projects() {
   return (
-    <section className="py-24 px-6 bg-black text-white">
+    <section className="py-24 px-6 text-white">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-3xl font-semibold mb-8">Selected Projects</h2>
         <div className="grid md:grid-cols-2 gap-8">
           {PROJECTS.map((p) => (
-            <motion.article
+            <motion.a
               key={p.title}
-              className="rounded-2xl overflow-hidden border border-white/10 bg-neutral-900 shadow-sm transition-all hover:shadow-lg hover:border-sky-400/60"
+              href={p.projectUrl || p.githubUrl || undefined}
+              target={p.projectUrl || p.githubUrl ? "_blank" : undefined}
+              rel={p.projectUrl || p.githubUrl ? "noreferrer" : undefined}
+              className={`block rounded-2xl overflow-hidden border border-white/10 bg-neutral-900 shadow-sm transition-all hover:shadow-lg hover:border-sky-400/60 ${p.projectUrl || p.githubUrl ? "cursor-pointer" : "cursor-default"
+                }`}
               whileHover={{ y: -4, scale: 1.02 }}
             >
               <img src={p.img} alt={p.title} className="w-full aspect-[16/9] object-cover" />
               <div className="p-6">
-                <h3 className="text-xl font-bold">{p.title}</h3>
+                <div className="flex items-start justify-between gap-3">
+                  <h3 className="text-xl font-bold">{p.title}</h3>
+                  {(p.projectUrl || p.githubUrl) && <ExternalLink size={18} className="mt-1 shrink-0 text-sky-400" />}
+                </div>
                 <p className="mt-2 text-neutral-300">{p.blurb}</p>
+                {(p.projectUrl || p.githubUrl) && <p className="mt-4 text-sm text-sky-400">Open project</p>}
               </div>
-            </motion.article>
+            </motion.a>
           ))}
         </div>
       </div>
@@ -468,7 +570,7 @@ function Projects() {
 
 function Experience() {
   return (
-    <section className="py-24 px-6 bg-neutral-950 text-white">
+    <section className="py-24 px-6 text-white">
       <div className="max-w-5xl mx-auto">
         <h2 className="text-3xl font-semibold mb-8">Experience</h2>
         <ol className="relative border-l border-neutral-700 ml-3">
@@ -503,7 +605,7 @@ function Experience() {
 
 function Skills() {
   return (
-    <section className="py-24 px-6 bg-black text-white">
+    <section className="py-24 px-6 text-white">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-3xl font-semibold mb-8">Skills</h2>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -537,7 +639,7 @@ function Skills() {
 
 function Certifications() {
   return (
-    <section className="py-24 px-6 bg-neutral-950 text-white">
+    <section className="py-24 px-6 text-white">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-3xl font-semibold mb-8 flex items-center gap-2">
           <Award size={22} className="text-sky-400" />
@@ -575,7 +677,7 @@ function Certifications() {
 // -----------------------------
 function Education() {
   return (
-    <section className="py-24 px-6 bg-black text-white">
+    <section className="py-24 px-6 text-white">
       <div className="max-w-5xl mx-auto">
         <h2 className="text-3xl font-semibold mb-8 flex items-center gap-2">
           <GraduationCap size={22} className="text-sky-400" />
@@ -616,7 +718,7 @@ function Education() {
 
 function About() {
   return (
-    <section className="py-24 px-6 bg-black text-white">
+    <section className="py-24 px-6 text-white">
       <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-8">
         {/* Profile image slot */}
         <div className="flex-shrink-0">
@@ -644,7 +746,7 @@ function About() {
 
 function Contact() {
   return (
-    <section className="py-24 px-6 bg-neutral-950 text-white">
+    <section className="py-24 px-6 text-white">
       <div className="max-w-4xl mx-auto text-center">
         <h2 className="text-3xl font-semibold mb-8">Let’s connect</h2>
         <h3>(click to view)</h3>
@@ -717,9 +819,21 @@ function Contact() {
 // -----------------------------
 export default function App() {
   return (
-    <div className="min-h-screen font-sans bg-black text-white">
+    <div className="min-h-screen flex flex-col font-sans bg-black text-white relative isolate">
+      <div className="fixed inset-0 -z-10">
+        <FloatingLines
+          enabledWaves={["top", "middle", "bottom"]}
+          lineCount={5}
+          lineDistance={5}
+          bendRadius={5}
+          bendStrength={-0.5}
+          interactive={true}
+          parallax={true}
+        />
+        <div className="absolute inset-0 bg-black/30" />
+      </div>
       <Navbar />
-      <main className="pt-20">
+      <main className="flex-1 pt-20">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/projects" element={<Projects />} />
@@ -731,7 +845,7 @@ export default function App() {
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </main>
-      <footer className="pb-10 px-6 text-center text-sm text-neutral-500">
+      <footer className="mt-auto pb-10 px-6 text-center text-sm text-neutral-500">
         © {new Date().getFullYear()} Addison Doseck. All rights reserved.
       </footer>
     </div>
