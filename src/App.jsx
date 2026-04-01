@@ -42,7 +42,7 @@ const PROJECTS = [
     blurb:
       "Replayly is a web app for tracking backend API failures, reviewing request logs, adding notes, and replaying saved requests for debugging. Tech stack: React, Vite, custom UI components, and a connected Spring backend API.",
     img: "/projects/Replayly.png",
-    projectUrl: "",
+    projectUrl: "https://replayly-client.vercel.app/",
     githubUrl: "https://github.com/DoughSec/Replayly-server",
   },
   {
