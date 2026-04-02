@@ -164,8 +164,16 @@ const SKILL_BUCKETS = [
 
 const CERTIFICATIONS = [
   {
+    name: "Agentic AI Fundamentals",
+    issuer: "Databricks",
+    year: "2026",
+    img: "/certs/AgenticAI2.png",
+    href:
+      "https://credentials.databricks.com/b58e845e-7490-44c4-bca9-374e81244331#acc.AEMytelm",
+  },
+  {
     name: "AI Fluency",
-    issuer: "",
+    issuer: "Anthropic",
     year: "2026",
     img: "/certs/Fluency.png",
     href:
