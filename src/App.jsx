@@ -22,6 +22,22 @@ import FloatingLines from "./components/FloatingLines";
 // -----------------------------
 const PROJECTS = [
   {
+    title: "Lindeys Catering App",
+    blurb:
+      "A full-stack web application built for an upscale catering company to replace paper-based event prep workflows. Admins can invite team members, schedule events, assign staff, and track equipment checklists that sync across devices in real time. Built with Java 21 / Spring Boot 3, React 18 with TypeScript, MySQL, and STOMP WebSockets, with JWT authentication in httpOnly cookies and strict invite-only signup enforced at the API layer.",
+    img: "/projects/Lindeys.png",
+    projectUrl: "https://www.lindeys.com/",
+    githubUrl: "",
+  },
+  {
+    title: "Junior Landscaping Services",
+    blurb:
+      "Junior Landscaping Services is a landscaping company that focuses on different local services such as hardscaping/landscaping. This application is meant to act a portal for customers to book appointments with the company and view all of the existing work and services utilizing React components for seamless front end development, and a simple backend spring boot system for any business logic.",
+    img: "/projects/Landscape.png",
+    projectUrl: "https://junior-landscape-services.com/",
+    githubUrl: "",
+  },
+  {
     title: "Consultrix",
     blurb:
       "Consultrix is a full-stack workforce and training management platform that centralizes operations across facilities, cohorts, instructors, and students, with features for assignments, attendance, grading, and progress tracking. It is built using Java 25, Spring Boot, Spring Data JPA (Hibernate), MySQL, and React, and deployed on AWS with Jenkins CI/CD and Terraform-managed infrastructure. The project was developed using a structured Git workflow with 40+ feature branches for modular, scalable development.",
